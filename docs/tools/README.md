@@ -1,5 +1,4 @@
-# tools
+# Command Line Tools
 
-The command line tools described here use an authentication token from the 
-environment to talk to the local node. The environment variable is called
-`ASTRALD_APPHOST_TOKEN` and has an `Identity` assigned to it.
+* Command line tools expect the env var `ASTRALD_APPHOST_TOKEN` to contain
+  the `Access Token` they should use to authenticate to the local `Node`.

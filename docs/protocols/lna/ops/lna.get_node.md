@@ -4,13 +4,11 @@ Get node info.
 
 ## Arguments
 
-| Name | Type     | Description          |
-| ---- |----------|----------------------|
-| id   | identity | ID of the node       |
+* id (identity, required) – ID of the node.
 
-## Return values
+## Returned objects
 
-The method returns a `lna.node` object.
+The operation returns a `lna.node` object.
 
 ## Examples
 

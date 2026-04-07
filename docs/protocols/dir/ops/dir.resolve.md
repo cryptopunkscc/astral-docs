@@ -1,25 +1,22 @@
 # dir.resolve
 
-## Description
-
-Resolve an `identity` of a given name using any supported resolution 
-mechanism. By default public keys and aliases are supported, but modules can add more mechanims.
+Resolve an `identity` from the string. The string can be:
+* The pubkey hex string of the `identity`
+* The alias of the `identity`
 
 ## Arguments
 
-| name | type    | description              |
-| ---- | ------- | ------------------------ |
-| name | string8 | The name to be resolved. |
+* name (string8, required) – The name to be resolved.
 
-## Return values
+## Returned objects
 
-On success the call returns a single `identity` object.
-
-On error it returns nothing.
+The operation returns one of:
+* An `error_message` object if there was an error.
+* An `identity` object if the name was resolved.
 
 ## Examples
 
 ```shellsession
 $ astral-query dir.resolve -name somealias -out json
-{"Type":"identity","Object":"0282fee8775757cdd8fda8b220195f5b8611312cd145c5a1a3aa55df210e779b2c"}
+{"Type":"identity",Object":"0282fee8775757cdd8fda8b220195f5b8611312cd145c5a1a3aa55df210e779b2c"}
 ```

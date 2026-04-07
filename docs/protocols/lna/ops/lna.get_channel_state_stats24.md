@@ -4,11 +4,11 @@ Get 24-hour channel state statistics for all channels.
 
 ## Arguments
 
-None.
+* None.
 
-## Return values
+## Returned objects
 
-The method returns an object stream of `lna.channel_state_stats` objects, followed by `eos`.
+The operation returns a stream of `lna.channel_state_stats` objects, followed by an `eos` object.
 
 ## Examples
 

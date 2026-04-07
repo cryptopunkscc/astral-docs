@@ -4,13 +4,11 @@ Get channel info.
 
 ## Arguments
 
-| Name | Type   | Description       |
-| ---- | ------ | ----------------- |
-| id   | string | ID of the channel |
+* id (string, required) – ID of the channel.
 
-## Return values
+## Returned objects
 
-The method returns a `lna.channel` object.
+The operation returns a `lna.channel` object.
 
 ## Examples
 

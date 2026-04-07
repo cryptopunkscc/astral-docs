@@ -1,17 +1,17 @@
 # dir.set_alias
 
-Set an alias for an identity.
+Set or remove an alias for an identity.
 
 ## Arguments
 
-| name  | type     | description                        |
-| ----- | -------- | ---------------------------------- |
-| id    | identity | The identitty to set the alias for |
-| alias | string8  | The alias                          |
+* id (identity, required) – The identity to set the alias for
+* alias (string8) – The alias to set. No alias to remove.
 
-## Return values
+## Returned objects
 
-The method returns a single `ack` object on success or an `error_message` on error.
+The operation returns one of:
+* An `error_message` object if there was an error.
+* An `ack` object if the operation was successful.
 
 ## Examples
 

@@ -1,24 +1,25 @@
 # dir.get_alias
 
-Get the (locally set) alias of an `identity`.
-
-## Description
-
-This method gets the (locally set) alias for the provided `identity`.
+Get the alias of an `Identity`.
 
 ## Arguments
 
-| name | type     | description                        |
-| ---- | -------- | ---------------------------------- |
-| id   | identity | The identitty to get the alias for |
+* id (identity, required) – The identity to get the alias of.
 
-## Return values
+## Returned objects
 
-The method returns a single `string8` object containing the alias for the identity.
+The operation returns one of:
+* An `error_message` object if there was an error.
+* A `string8` object containing the alias of the identity.
 
 ## Examples
 
 ```shellsession
-$ astral-query dir.get_alias -id 0282fee8775757cdd8fda8b220195f5b8611312cd145c5a1a3aa55df210e779b2c -out text
-#[string8] somealias
+$ astral-query dir.get_alias -id 0282fee8775757cdd8fda8b220195f5b8611312cd145c5a1a3aa55df210e779b2c -out json
+{"Type":"string8","Object":"somealias"}
+```
+
+```shellsession
+$ astral-query dir.get_alias -id 0282fee8775757cdd8fda8b220195f5b8611312cd145c5a1a3aa55df210e779b21 -out json
+{"Type":"error_message","Object":"record not found"}
 ```

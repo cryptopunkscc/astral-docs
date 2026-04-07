@@ -4,13 +4,11 @@ Get the full log of channel policy changes.
 
 ## Arguments
 
-| Name | Type   | Description        |
-| ---- |--------|--------------------|
-| id   | string | ID of the channel  |
+* id (string, required) – ID of the channel.
 
-## Return values
+## Returned objects
 
-The method returns an object stream of `lna.channel_party_policy` objects.
+The operation returns a stream of `lna.channel_party_policy` objects.
 
 ## Examples
 

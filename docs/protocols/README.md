@@ -5,4 +5,6 @@
 * The `Operations` used by protocols are described in their "ops" subdirectory.
 * All operations implicitly support the special "in" and "out" parameters. 
   Those parameters are used to specify the input and output encoding for the 
-  operation and can be one of "bin", "json" and "text".
+  `Operation` and can be one of "bin", "json" or "text".
+* The local `Node` supports these protocols:
+  * dir

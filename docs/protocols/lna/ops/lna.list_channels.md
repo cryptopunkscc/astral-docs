@@ -4,13 +4,11 @@ Get a list of channels.
 
 ## Arguments
 
-| Name | Type     | Description                                        |
-| ---- | -------- |----------------------------------------------------|
-| id   | identity | List channels where one of the parties has this ID |
+* id (identity, required) – List channels where one of the parties has this ID.
 
-## Return values
+## Returned objects
 
-The method returns an object stream of `lna.channel` objects.
+The operation returns a stream of `lna.channel` objects, followed by an `eos` object.
 
 ## Examples
 
