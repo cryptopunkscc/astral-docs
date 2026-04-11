@@ -1,7 +1,15 @@
 # Object ID
 
-* The `Object ID` consists of the `Size` (uint64) and the `Hash` (32 bytes).
-* The `Size` is the length of the `Payload` in bytes.
-* The `Hash` is a SHA256 hash of the `Payload`.
-* The `Object ID` is encoded using zBase32 encoding with `data1` prefix.
-* The `Hash` of an `Empty Object` is the SHA256 hash of an empty byte buffer.
+* The `Object ID` is a 320-bit value consisting of the `Object Size` (uint64) 
+  followed by the `Object Hash` (SHA256).
+* The `Object Size` is the size of the object encoded using the `Binary 
+Encoding`.
+* The `Object Hash` is the SHA256 hash of the object encoded using the `Binary 
+Encoding`.
+* The `Object ID` is calculated by:
+  * encoding the 320-bit value using zBase32 with character set 
+    "ybndrfg8ejkmcpqxot1uwisza345h769"
+  * removing the leading "y"s from the string
+  * adding a "data1" prefix
+* The `Object Hash` of an `Empty Object` is the SHA256 hash of an empty byte 
+  buffer.
