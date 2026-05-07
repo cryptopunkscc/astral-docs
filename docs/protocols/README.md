@@ -8,3 +8,4 @@
   `Operation` and can be one of "bin", "json" or "text".
 * The local `Node` supports these protocols:
   * dir
+  * tree

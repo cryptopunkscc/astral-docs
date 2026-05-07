@@ -10,6 +10,7 @@ with it.
   * [Basics](protocols/README.md) – protocol fundamentals
   * [dir](protocols/dir.md) - alias management, identity resolution
   * [lna](protocols/lna.md) - lightning network analytics
+  * [tree](protocols/tree/README.md) - hierarchical key-value configuration store
 * [Tools](tools/README.md) – command-line tools
   * [astral-query](tools/astral-query.md) - send queries from the command line
 * Transports – how to access the local `Node`

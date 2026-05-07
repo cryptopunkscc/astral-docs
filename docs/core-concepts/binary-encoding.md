@@ -8,3 +8,8 @@
         * Write the `Stamp`
         * Write the `Object Type` as an 8-bit length encoded ASCII string.
     * Write the `Payload` data.
+
+## Arrays
+
+* Arrays are encoded using a `uint32` length-prefix. An array of 3 `uint8` 
+  values [1, 2, 3] is encoded as: 00 00 00 03 01 02 03.

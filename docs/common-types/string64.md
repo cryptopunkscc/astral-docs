@@ -4,7 +4,7 @@ Basic string type, equivalent to string8, string16, and string32 in JSON.
 
 ## Binary Encoding
 
-A uint64 length prefix followed by the UTF-8 encoded bytes of the string.
+A uint64 length prefix followed by the string.
 
 ## JSON Encoding
 

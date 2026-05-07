@@ -6,7 +6,7 @@ Get a route from source to destination that can deliver an amount of money.
 
 * source (identity) – The identity of the source node for the route.
 * destination (identity) – The identity of the destination node for the route.
-* amount (amount) – The amount of money to be delivered at the destination.
+* amount (amount) – The amount in sats to be delivered at the destination.
 
 ## Returned objects
 

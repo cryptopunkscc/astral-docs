@@ -6,5 +6,5 @@
 * The `JSON Encoding` uses a container with "Type" and "Object" keys. The
   "Type" key contains the `Object Type` and the "Object" key contains the
   `Payload` encoded as a JSON object.
-* The `JSON Encoding` does not specify the structure of the JSON object. The
-  structure must be provided in the documentation of the `Object Type`.
+* The exact way the `Payload` is encoded is described in the documentation 
+  of the specific `Object Type`.

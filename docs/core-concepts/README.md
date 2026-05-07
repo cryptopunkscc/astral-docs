@@ -2,4 +2,4 @@
 
 The `Astral Network` is a network of `Identities` that communicate by
 sending `Queries` to each other, which, if accepted, open `Channels` used
-to exchange data in the form of `Objects`.
+to exchange data in the form of `Objects` and `Object Streams`.
