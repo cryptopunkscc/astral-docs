@@ -59,3 +59,7 @@ with it.
   * [astral-query](tools/astral-query.md) - send queries from the command line
 * Transports – how to access the local `Node`
   * [HTTP Transport](transports/http.md)
+
+## Hints
+
+* When editing protocol documentation, read [this](./protocols/README.md) first.
