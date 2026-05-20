@@ -46,7 +46,7 @@ This documentation describes the Astral Network and how to interact with it.
   * [uint32](common-types/uint32.md)
   * [uint64](common-types/uint64.md)
 * Protocols
-  * [Basics](protocols/README.md) – protocol fundamentals
+  * [Basics](protocols/README.md) – protocol documentation structure
   * [dir](protocols/dir.md) - alias management, identity resolution
   * [lna](protocols/lna.md) - lightning network analytics
   * [tree](protocols/tree/README.md) - hierarchical key-value configuration store
@@ -57,7 +57,3 @@ This documentation describes the Astral Network and how to interact with it.
   * [Binary Encoding](topics/binary-encoding.md)
   * [JSON Encoding](topics/json-encoding.md)
   * [Text Encoding](topics/text-encoding.md)
-
-## Hints
-
-* When editing protocol documentation, read [this](./protocols/README.md) first.
