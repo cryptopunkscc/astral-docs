@@ -6,6 +6,3 @@
 * All operations implicitly support the special "in" and "out" parameters. 
   Those parameters are used to specify the input and output encoding for the 
   `Operation` and can be one of "bin", "json" or "text".
-* The local `Node` supports these protocols:
-  * dir
-  * tree

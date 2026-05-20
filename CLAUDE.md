@@ -1,7 +1,5 @@
 # CLAUDE.md
 
-This repository contains the documentation of the Astral Network.
+This repository contains the full documentation for The Astral Network.
 
-Read [this](docs/README.md) first.
-
-The tools/ directory contains documentation on how to use certain tools. 
+Read [this file](README.md) before interacting with astral.
