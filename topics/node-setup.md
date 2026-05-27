@@ -40,7 +40,10 @@
 7. Install the resulting `mod.auth.signed_contract` as the active contract
    via [`tree.set`](../protocols/tree/ops/tree.set.md) at path
    `/mod/user/config/active_contract`.
-8. Verify with
+8. Mint an apphost access token bound to the `User` identity and export it
+   so the CLI authenticates as the user (see
+   [Acting as the User from the CLI](#acting-as-the-user-from-the-cli)).
+9. Verify with
    [`user.info`](../protocols/user/ops/user.info.md) — it returns the user
    alias, node alias, and active contract id.
 
@@ -69,8 +72,46 @@
 5. Install the signed contract via
    [`tree.set`](../protocols/tree/ops/tree.set.md) at
    `/mod/user/config/active_contract`.
-6. Verify with
+6. Mint an apphost access token bound to the `User` identity and export it
+   so the CLI authenticates as the user (see
+   [Acting as the User from the CLI](#acting-as-the-user-from-the-cli)).
+7. Verify with
    [`user.info`](../protocols/user/ops/user.info.md).
+
+## Acting as the User from the CLI
+
+A freshly started `Node` authenticates local CLI calls under its own node
+identity. Operations that must be performed *as the user* (for example
+`user.info`, `user.claim`, signing further contracts as the issuer with a
+software user key) will fail or return node-scoped results until the CLI
+presents an access token bound to the user identity.
+
+1. Mint a token for the user with
+   [`apphost.create_token`](../protocols/apphost/ops/apphost.create_token.md):
+
+   ```shellsession
+   $ astral-query apphost.create_token -id <user-id-or-alias> -out json
+   {"Type":"apphost.access_token","Object":{"Identity":"...","Token":"...","ExpiresAt":"..."}}
+   ```
+
+2. Persist the token in the shell environment by appending to `~/.bashrc`
+   (or the equivalent rc file) so every new shell picks it up:
+
+   ```bash
+   export ASTRALD_APPHOST_TOKEN="<token>"
+   ```
+
+   Re-source the rc file or open a new shell. The CLI reads
+   `ASTRALD_APPHOST_TOKEN` to authenticate to the local `Node` (see
+   [Command Line Tools](../tools/README.md)).
+
+3. Confirm the CLI now acts as the user with
+   [`apphost.whoami`](../protocols/apphost/ops/apphost.whoami.md) — the
+   returned `identity` must equal the user's public key hex.
+
+Tokens default to a 1-year lifetime; pass `-duration` to
+`apphost.create_token` to override. The token is a bearer credential —
+treat `~/.bashrc` (or wherever it is exported from) as sensitive.
 
 ## Adding More Nodes to the Swarm
 
