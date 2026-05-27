@@ -48,8 +48,12 @@ This documentation describes the Astral Network and how to interact with it.
 * Protocols
   * [Basics](protocols/README.md) – protocol documentation structure
   * [apphost](protocols/apphost/README.md) - on-device API for local apps (tokens, handlers, contracts, holds)
+  * [bip137sig](protocols/bip137sig/README.md) - BIP-39/32/137 seed, key derivation, and message signing
+  * [crypto](protocols/crypto/README.md) - signing and verifying hashes and text, public key derivation
   * [dir](protocols/dir/README.md) - alias management, identity resolution
   * [lna](protocols/lna/README.md) - lightning network analytics
+  * [nodes](protocols/nodes/README.md) - encrypted links and multiplexed sessions between nodes
+  * [objects](protocols/objects/README.md) - typed object storage, retrieval, and provider discovery
   * [tree](protocols/tree/README.md) - hierarchical key-value configuration store
   * [user](protocols/user/README.md) - user identity, swarm membership, asset list
 * [Tools](tools/README.md) – command-line tools

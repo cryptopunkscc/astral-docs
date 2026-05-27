@@ -18,8 +18,3 @@ The operation returns one of:
 $ astral-query dir.get_alias -id 0282fee8775757cdd8fda8b220195f5b8611312cd145c5a1a3aa55df210e779b2c -out json
 {"Type":"string8","Object":"somealias"}
 ```
-
-```shellsession
-$ astral-query dir.get_alias -id 0282fee8775757cdd8fda8b220195f5b8611312cd145c5a1a3aa55df210e779b21 -out json
-{"Type":"error_message","Object":"record not found"}
-```

@@ -1,0 +1,28 @@
+# objects.echo
+
+Echo received objects back to the caller, optionally filtered by type. Useful for debugging the object pipeline.
+
+## Arguments
+
+* only (string8) – Comma-separated list of object types to echo. Other types are dropped.
+* except (string8) – Comma-separated list of object types to drop. Other types are echoed.
+* stop (string8) – Closes the channel when an object of this type is received (acts as an explicit terminator).
+* in (string8) – Input format.
+* out (string8) – Output format.
+* (stream) – Any objects to be echoed back. Unknown object types are silently skipped.
+
+## Returned objects
+
+The operation returns a stream of the same objects it received (subject to the `only`/`except` filters). The stream ends when the input closes or a `stop`-typed object arrives.
+
+## Examples
+
+```shellsession
+$ echo '{"Type":"string8","Object":"ping"}' | astral-query objects.echo -in json -out json
+{"Type":"string8","Object":"ping"}
+```
+
+```shellsession
+$ echo '{"Type":"bool","Object":true}' | astral-query objects.echo -only bool -in json -out json
+{"Type":"bool","Object":true}
+```

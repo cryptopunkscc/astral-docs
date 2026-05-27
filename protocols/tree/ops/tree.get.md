@@ -20,8 +20,3 @@ $ astral-query tree.get -path /mod/tcp/settings/listen -out json
 {"Type":"bool","Object":false}
 {"Type":"eos","Object":null}
 ```
-
-```shellsession
-$ astral-query tree.get -path /mod/tcp/settings/nonexistent -out json
-{"Type":"error_message","Object":"node nonexistent not found in /mod/tcp/settings"}
-```

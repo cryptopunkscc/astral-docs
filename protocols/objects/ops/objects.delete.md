@@ -1,0 +1,24 @@
+# objects.delete
+
+Delete an object (or a stream of objects) from a repository.
+
+## Arguments
+
+* repo (string8, required) – Repository to delete from. There is no default repository for delete.
+* id (object_id.sha256) – Id to delete. If omitted, the operation streams ids from the input.
+* zone (zone) – Zone filter for the delete context. Defaults to all zones.
+* out (string8) – Output format.
+* (stream) – When `id` is omitted, a stream of `object_id.sha256` objects to delete; `ack` and `eos` are ignored.
+
+## Returned objects
+
+The operation returns one of:
+* An `error_message` object if the repository is not found, the delete fails, or a protocol error occurs.
+* An `ack` object for each successful delete (one shot if `id` was given, otherwise one per streamed id).
+
+## Examples
+
+```shellsession
+$ astral-query objects.delete -repo local -id data1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -out json
+{"Type":"ack","Object":null}
+```
