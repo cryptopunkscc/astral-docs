@@ -47,9 +47,11 @@ This documentation describes the Astral Network and how to interact with it.
   * [uint64](common-types/uint64.md)
 * Protocols
   * [Basics](protocols/README.md) – protocol documentation structure
-  * [dir](protocols/dir.md) - alias management, identity resolution
-  * [lna](protocols/lna.md) - lightning network analytics
+  * [apphost](protocols/apphost/README.md) - on-device API for local apps (tokens, handlers, contracts, holds)
+  * [dir](protocols/dir/README.md) - alias management, identity resolution
+  * [lna](protocols/lna/README.md) - lightning network analytics
   * [tree](protocols/tree/README.md) - hierarchical key-value configuration store
+  * [user](protocols/user/README.md) - user identity, swarm membership, asset list
 * [Tools](tools/README.md) – command-line tools
   * [astral-query](tools/astral-query.md) - send queries from the command line
 * Other topic
