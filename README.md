@@ -59,10 +59,14 @@ This documentation describes the Astral Network and how to interact with it.
   * [user](protocols/user/README.md) - user identity, swarm membership, asset list
 * [Tools](tools/README.md) – command-line tools
   * [astral-query](tools/astral-query.md) - send queries from the command line
-* Other topic
+* Other topics
   * [Node Setup](topics/node-setup.md)
   * [Node Claiming](topics/node-claiming.md)
+  * [Astral IPC](topics/astral-ipc.md)
   * [HTTP Transport](topics/http-transport.md)
+  * [WebSocket Transport](topics/ws-transport.md)
   * [Binary Encoding](topics/binary-encoding.md)
   * [JSON Encoding](topics/json-encoding.md)
   * [Text Encoding](topics/text-encoding.md)
+  * [Batch mode](topics/batch-mode.md)
+  * [Network Architecture](topics/network-architecture.md)
