@@ -6,4 +6,5 @@
 * For example a structure:
   * Name (string8)
   * IDs ([]uint16)
-* 
+* A field can be optional. In binary encoding, an optional field is preceded by
+  a `bool` presence flag (see [Binary Encoding](../topics/binary-encoding.md)). 
