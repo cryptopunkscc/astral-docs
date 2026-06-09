@@ -5,21 +5,21 @@
 * The `Binary Encoding` uses the Big Endian byte order. Signed integers
   use two's complement.
 * The `Binary Encoding` defines the `Payload` bytes only. Framing of a
-  typed object — the bytes that announce the [`Object Type`](../core-primitives/object-type.md) in front of
+  typed object — the bytes that announce the [`Object Type`](../core-definitions/object-type.md) in front of
   the `Payload` — is covered in [Codec](codec.md).
 
 ## Primitives
 
 * Fixed-width integers are written as their natural width in Big Endian.
-  [`uint8`](../common-types/uint8.md) is 1 byte,
-  [`uint16`](../common-types/uint16.md) is 2 bytes,
-  [`uint32`](../common-types/uint32.md) is 4 bytes,
-  [`uint64`](../common-types/uint64.md) is 8 bytes.
+  [`uint8`](../primitive-types/uint8.md) is 1 byte,
+  [`uint16`](../primitive-types/uint16.md) is 2 bytes,
+  [`uint32`](../primitive-types/uint32.md) is 4 bytes,
+  [`uint64`](../primitive-types/uint64.md) is 8 bytes.
 * Length-prefixed primitives come in four widths:
-  [`string8`](../common-types/string8.md)/`bytes8` use a `uint8` length,
-  [`string16`](../common-types/string16.md)/`bytes16` use `uint16`,
-  [`string32`](../common-types/string32.md)/`bytes32` use `uint32`,
-  [`string64`](../common-types/string64.md)/`bytes64` use `uint64`. The
+  [`string8`](../primitive-types/string8.md)/`bytes8` use a `uint8` length,
+  [`string16`](../primitive-types/string16.md)/`bytes16` use `uint16`,
+  [`string32`](../primitive-types/string32.md)/`bytes32` use `uint32`,
+  [`string64`](../primitive-types/string64.md)/`bytes64` use `uint64`. The
   width is part of the `Object Type`; payload caps follow the width
   (255, 65 535, 2³²−1, 2⁶⁴−1).
 * `Structured` objects are written field by field in the order declared
@@ -94,7 +94,7 @@ Map sort — map[uint16]uint8{1: 0xa, 7: 0xb, 256: 0xc}
   non-interface element is preceded by a `0x01` presence byte so that a
   sequence of values and a sequence of optionals produce identical bytes
   for present elements.
-* Encoded as a [`bool`](../common-types/bool.md) presence flag followed
+* Encoded as a [`bool`](../primitive-types/bool.md) presence flag followed
   by the value when present.
 
 ```

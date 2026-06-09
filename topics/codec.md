@@ -1,9 +1,9 @@
 # Codec
 
-* The `Codec` writes and reads [`Objects`](../core-primitives/object.md) as a type tag followed by the
+* The `Codec` writes and reads [`Objects`](../core-definitions/object.md) as a type tag followed by the
   `Payload`. The tag is produced by a `Type Encoder` chosen by the caller;
   the `Payload` follows the [Binary Encoding](binary-encoding.md) rules.
-* The decoder resolves the [`Object Type`](../core-primitives/object-type.md) to a zero `Object` through a
+* The decoder resolves the [`Object Type`](../core-definitions/object-type.md) to a zero `Object` through a
   [Blueprints](blueprints.md) registry and calls `ReadFrom` on it.
 * The `Codec` described here is the binary framing layer. `JSON` and
   `Text` encodings define their own framing — see
@@ -13,16 +13,16 @@
 
 | Encoder     | Tag bytes                                                          | Notes                                                                                   |
 |-------------|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| `Short`     | `Object Type` ([`string8`](../common-types/string8.md))            | Used by framed channels and nested polymorphic fields.                                  |
+| `Short`     | `Object Type` ([`string8`](../primitive-types/string8.md))            | Used by framed channels and nested polymorphic fields.                                  |
 | `Canonical` | `Stamp \|\| Object Type (string8)`                                 | Used for `Object ID` hashing and out-of-band transport. Rejects an empty `Object Type`. |
-| `Indexed`   | [`uint8`](../common-types/uint8.md) index                          | Used by protocols with a closed type table known to both parties.                       |
+| `Indexed`   | [`uint8`](../primitive-types/uint8.md) index                          | Used by protocols with a closed type table known to both parties.                       |
 
 ## Canonical Form
 
 * The `Canonical Form` of a `Typed Object` is the byte sequence used to
-  compute its [`Object ID`](../core-primitives/object-id.md) and to
+  compute its [`Object ID`](../core-definitions/object-id.md) and to
   express it outside any framing.
-* It is the `Canonical Type Encoder`'s output: [`Stamp`](../core-primitives/stamp.md) followed by the
+* It is the `Canonical Type Encoder`'s output: [`Stamp`](../core-definitions/stamp.md) followed by the
   `Object Type` as a `string8` followed by the `Payload`.
 
 ```

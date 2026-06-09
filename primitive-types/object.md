@@ -12,7 +12,7 @@ For example a [`uint8`](uint8.md) of 21 is encoded as:
 
 ## JSON Encoding
 
-Encoded using the standard container from [JSON Encoding](../core-concepts/json-encoding.md):
+Encoded using the standard container from [JSON Encoding](../topics/json-encoding.md):
 
 ```json
 {
@@ -23,7 +23,7 @@ Encoded using the standard container from [JSON Encoding](../core-concepts/json-
 
 ## Text Encoding
 
-Encoded using the standard [Text Encoding](../core-concepts/text-encoding.md)
+Encoded using the standard [Text Encoding](../topics/text-encoding.md)
 
 ```text
 #[uint8] 21

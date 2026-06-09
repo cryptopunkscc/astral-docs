@@ -7,4 +7,4 @@
   * Name (string8)
   * IDs ([]uint16)
 * A field can be optional. In binary encoding, an optional field is preceded by
-  a [`bool`](../common-types/bool.md) presence flag (see [Binary Encoding](../topics/binary-encoding.md)). 
+  a [`bool`](../primitive-types/bool.md) presence flag (see [Binary Encoding](../topics/binary-encoding.md)). 

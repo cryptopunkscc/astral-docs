@@ -61,7 +61,7 @@ What happens on the wire:
 
 1. The library opens a new WS and completes the handshake.
 2. It sends `mod.apphost.route_query_msg` with a fresh 16-hex-character
-   `Nonce`, `Caller`, `Target`, [`Query`](../core-primitives/query.md) (with `?args` merged in), `Zone`
+   `Nonce`, `Caller`, `Target`, [`Query`](../core-definitions/query.md) (with `?args` merged in), `Zone`
    and `Filters`.
 3. The server replies with exactly one of:
    - `mod.apphost.query_accepted_msg` → the WS becomes the query
@@ -70,7 +70,7 @@ What happens on the wire:
    - `mod.apphost.error_msg` with code `route_not_found` → throws
      `RouteNotFound`; any other code → `ProtocolError`.
 4. After acceptance, both peers exchange `AstralObject` frames freely. The
-   stream ends at the first [`eos`](../common-types/eos.md) frame or when the WS closes; the async
+   stream ends at the first [`eos`](../primitive-types/eos.md) frame or when the WS closes; the async
    iterator returns at that point. `stream.send(obj)` writes a frame;
    `stream.close()` tears down the WS (which cancels the query host-side).
 
@@ -104,9 +104,9 @@ Two WSes are involved:
 
 1. Opened and handshaken by `host.register(identity, handler)`.
 2. Client sends `mod.apphost.register_service_msg` → `{ Identity }`.
-3. Server replies with [`ack`](../common-types/ack.md); on error it sends `mod.apphost.error_msg`
+3. Server replies with [`ack`](../primitive-types/ack.md); on error it sends `mod.apphost.error_msg`
    (e.g. unauthorized). Authorization mirrors `route_query`: the caller
-   identity must equal [`Identity`](../core-primitives/identity.md) or hold a `SudoAction` for it.
+   identity must equal [`Identity`](../core-definitions/identity.md) or hold a `SudoAction` for it.
 4. The library then loops on the receiver. Stray frames are ignored;
    every `mod.apphost.incoming_query_msg`
    (`{ QueryID, Caller, Target, Query }`) is wrapped in an

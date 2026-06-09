@@ -13,11 +13,11 @@ VOCAB = []
 
 def add_core(filename, forms):
     for form in forms:
-        VOCAB.append((form, f"core-primitives/{filename}"))
+        VOCAB.append((form, f"core-definitions/{filename}"))
 
 def add_common(filename, forms):
     for form in forms:
-        VOCAB.append((form, f"common-types/{filename}"))
+        VOCAB.append((form, f"primitive-types/{filename}"))
 
 def add_topic(filename, forms):
     for form in forms:
@@ -84,7 +84,7 @@ add_topic('ws-transport.md', ['WebSocket Transport', 'WebSocket transport'])
 
 
 def is_lowercase_common_type(target):
-    return target.startswith('common-types/')
+    return target.startswith('primitive-types/')
 
 
 def find_code_block_zones(lines):
@@ -298,7 +298,7 @@ def process_file(file_path):
 
 
 def main():
-    dirs = ['common-types', 'core-primitives', 'topics']
+    dirs = ['primitive-types', 'core-definitions', 'topics']
     all_added = {}
     for d in dirs:
         for f in sorted((ROOT / d).iterdir()):

@@ -1,6 +1,6 @@
 # Node Claiming
 
-Claiming brings a previously unclaimed [`Node`](../core-primitives/node.md) into a [`User`](../core-primitives/user.md)'s swarm by
+Claiming brings a previously unclaimed [`Node`](../core-definitions/node.md) into a [`User`](../core-definitions/user.md)'s swarm by
 installing a fresh `mod.user.swarm_access_action` contract on it. The
 initiator already holds an active contract; the target does not. See
 [Node Setup](node-setup.md) for how the initiator obtains its first active

@@ -9,7 +9,7 @@
 
 ## Binary Encoding
 
-Objects are sent over the channel by writing their type encoded as [`string8`](../common-types/string8.md) 
+Objects are sent over the channel by writing their type encoded as [`string8`](../primitive-types/string8.md) 
 followed by their payload encoded as `bytes32`. An empty type means a binary
 untyped blob.
 

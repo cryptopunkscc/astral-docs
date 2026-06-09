@@ -1,6 +1,6 @@
 # Node Setup
 
-* A fresh [`Node`](../core-primitives/node.md) runs without a [`User`](../core-primitives/user.md) identity. The daemon auto-generates
+* A fresh [`Node`](../core-definitions/node.md) runs without a [`User`](../core-definitions/user.md) identity. The daemon auto-generates
   a `secp256k1` node key on first start; until an active node contract is
   installed, the node operates only under its own identity.
 * A `Node` joins a `User`'s swarm by holding an active
@@ -26,7 +26,7 @@
    repository scanned by the `crypto` module (default: `local`, `system`,
    `mem0`). The module auto-indexes the key on insert, so it becomes usable
    as a signer for the corresponding public key.
-3. Derive the `User`'s [`Identity`](../core-primitives/identity.md) via
+3. Derive the `User`'s [`Identity`](../core-definitions/identity.md) via
    [`crypto.public_key`](../protocols/crypto/ops/crypto.public_key.md) over
    the private key. The hex of the `secp256k1` public key is the `User`
    identity.
@@ -81,7 +81,7 @@
 ## Acting as the User from the CLI
 
 A freshly started `Node` authenticates local CLI calls under its own node
-identity. [Operations](../core-primitives/op.md) that must be performed *as the user* (for example
+identity. [Operations](../core-definitions/op.md) that must be performed *as the user* (for example
 `user.info`, `user.claim`, signing further contracts as the issuer with a
 software user key) will fail or return node-scoped results until the CLI
 presents an access token bound to the user identity.
@@ -107,7 +107,7 @@ presents an access token bound to the user identity.
 
 3. Confirm the CLI now acts as the user with
    [`apphost.whoami`](../protocols/apphost/ops/apphost.whoami.md) — the
-   returned [`identity`](../common-types/identity.md) must equal the user's public key hex.
+   returned [`identity`](../primitive-types/identity.md) must equal the user's public key hex.
 
 Tokens default to a 1-year lifetime; pass `-duration` to
 `apphost.create_token` to override. The token is a bearer credential —

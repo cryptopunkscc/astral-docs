@@ -21,7 +21,7 @@ inbound-query attach.
 
 ## Framing
 
-The IPC protocol uses a binary [channel](../core-primitives/channel.md) for
+The IPC protocol uses a binary [channel](../core-definitions/channel.md) for
 messages.
 
 ## Session handshake
@@ -93,7 +93,7 @@ host  → guest: astral.ack                       (or error_msg{denied})
 ```
 
 The registration connection stays open. For each inbound query targeting
-[`Identity`](../core-primitives/identity.md), the host pushes:
+[`Identity`](../core-definitions/identity.md), the host pushes:
 
 ```
 host → guest: mod.apphost.incoming_query_msg {
