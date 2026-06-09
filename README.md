@@ -70,3 +70,5 @@ This documentation describes the Astral Network and how to interact with it.
   * [Text Encoding](topics/text-encoding.md)
   * [Batch mode](topics/batch-mode.md)
   * [Network Architecture](topics/network-architecture.md)
+* Scripts – repo maintenance
+    * [link-vocab.py](scripts/link-vocab.py) – link vocabulary terms at their first prose occurrence across docs
