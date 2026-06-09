@@ -55,6 +55,7 @@ This documentation describes the Astral Network and how to interact with it.
   * [lna](protocols/lna/README.md) - lightning network analytics
   * [nodes](protocols/nodes/README.md) - encrypted links and multiplexed sessions between nodes
   * [objects](protocols/objects/README.md) - typed object storage, retrieval, and provider discovery
+  * [player](protocols/player/README.md) - music playback and play queue control
   * [tree](protocols/tree/README.md) - hierarchical key-value configuration store
   * [user](protocols/user/README.md) - user identity, swarm membership, asset list
 * [Tools](tools/README.md) – command-line tools

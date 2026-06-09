@@ -1,0 +1,30 @@
+# player.state
+
+A snapshot of the playback state. While `Status` is "playing", the current position is extrapolated by observers as `Position + (now - UpdatedAt)`; the player emits a new snapshot on every transition rather than streaming continuous position updates.
+
+## Fields
+
+* Status (string8) – One of "playing", "paused" or "stopped".
+* Index (int32) – Queue index of the current track, or -1 if no track is loaded.
+* Track (object_id.sha256) – Object ID of the current track, or the zero object ID if no track is loaded.
+* Position (uint64) – Playback position in milliseconds at the time given by `UpdatedAt`.
+* Duration (uint64) – Duration of the current track in milliseconds, or 0 if unknown.
+* UpdatedAt (time) – When this snapshot was taken.
+* Version (uint64) – The queue version this snapshot refers to (see [player.queue](player.queue.md)).
+
+## Example
+
+```json
+{
+  "Type": "player.state",
+  "Object": {
+    "Status": "playing",
+    "Index": 2,
+    "Track": "data1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "Position": 73500,
+    "Duration": 214000,
+    "UpdatedAt": "2026-06-09T12:00:00Z",
+    "Version": 17
+  }
+}
+```
