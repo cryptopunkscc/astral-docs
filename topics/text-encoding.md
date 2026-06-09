@@ -4,7 +4,7 @@
   Network`.
 * The `Text Encoding` encodes its payload using Base64 encoding.
 * The `Text Encoding` can have a type-specific encoding of the payload,
-  which must be specified in the documentation of the `Object Type`.
+  which must be specified in the documentation of the [`Object Type`](../core-primitives/object-type.md).
 * The `Text Encoding` can be used to encode objects as
   [`Query`](../core-primitives/query-string.md) parameters.
 * The `Text Encoding` is done by concatenating the following:

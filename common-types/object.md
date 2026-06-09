@@ -6,7 +6,7 @@
 
 The object type encoded as string8 followed by the object payload.
 
-For example a `uint8` of 21 is encoded as:
+For example a [`uint8`](uint8.md) of 21 is encoded as:
 
 05 75 69 6e 74 38 15
 

@@ -1,8 +1,8 @@
 # Link
 
-* A `Link` is a connection between two `Nodes`.
-* A `Link` can carry `Queries` and `Channel` data between the two parties.
-* A `Link` can be established over an `Exonet` or some other means of binary
+* A `Link` is a connection between two [`Nodes`](node.md).
+* A `Link` can carry [`Queries`](query.md) and [`Channel`](channel.md) data between the two parties.
+* A `Link` can be established over an [`Exonet`](exonet.md) or some other means of binary
   data exchange.
 * A `Link` is multiplexed and can handle multiple `Channels` simultaneously.
 * A `Link` is authenticated so `Nodes` know who they are talking to.

@@ -5,6 +5,6 @@
 * An `Op Name` consists of alphanumeric characters, periods and 
   underscores, starting with a letter. Period is conventionally used to for 
   namespacing.
-* An `Op Parameter` has a `Parameter Name` and an `Object Type` it takes.
-* Only `Object Types` that support type-specific `Text Encoding` can be used as
+* An `Op Parameter` has a `Parameter Name` and an [`Object Type`](object-type.md) it takes.
+* Only `Object Types` that support type-specific [`Text Encoding`](../topics/text-encoding.md) can be used as
   `Op Parameters`.

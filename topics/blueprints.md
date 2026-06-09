@@ -1,19 +1,19 @@
 # Blueprints
 
-* A `Blueprint` describes a `Typed Object`'s wire structure so the `Codec` reads or writes it without compiled code.
-* Every `Object Type` known to a `Node` is backed by a compile-time prototype or a `Blueprint`, both held in one registry keyed by `Object Type`.
+* A `Blueprint` describes a `Typed Object`'s wire structure so the [`Codec`](codec.md) reads or writes it without compiled code.
+* Every [`Object Type`](../core-primitives/object-type.md) known to a [`Node`](../core-primitives/node.md) is backed by a compile-time prototype or a `Blueprint`, both held in one registry keyed by `Object Type`.
 
 ## Kinds
 
 * `Struct` — ordered named `Fields`; wire is each field's value in declared order.
-* `Alias` — names an existing primitive; wire is identical to the underlying primitive.
+* [`Alias`](../core-primitives/alias.md) — names an existing primitive; wire is identical to the underlying primitive.
 
 ## Specs
 
 * Each `Field` has a `Name` and one `Spec`:
     * `PrimitiveSpec` — primitive from the allowlist.
     * `RefSpec` — another registered `Object Type`.
-    * `SliceSpec` — `uint32` count + elements.
+    * `SliceSpec` — [`uint32`](../common-types/uint32.md) count + elements.
     * `ArraySpec` — elements only; length is in the schema.
     * `MapSpec` — `uint32` count + sorted key/value pairs.
     * `PtrSpec` — [`bool`](../common-types/bool.md) presence + value if present.
@@ -31,7 +31,7 @@
 * Maps `Object Type` → `Blueprint` or prototype. Names are unique and immutable.
 * A registry can have a `Parent`; lookups walk the chain, local entries shadow.
 * `Object Type` names are ASCII non-empty. `Field Names` are ASCII non-empty, unique within a `Blueprint` (case-insensitive).
-* A `Blueprint` is itself an `Object`; registering returns the [`Object ID`](../core-primitives/object-id.md) of its canonical form.
+* A `Blueprint` is itself an [`Object`](../core-primitives/object.md); registering returns the [`Object ID`](../core-primitives/object-id.md) of its canonical form.
 * Nested types resolve through the same registry given to the enclosing `Decode`.
 
 ## Sync

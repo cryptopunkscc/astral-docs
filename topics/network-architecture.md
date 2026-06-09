@@ -1,18 +1,18 @@
 # Network Architecture
 
-The *Astral Network* consists of different kinds of actors represented by *Identities*, which communicate by sending each other *Queries* and exchange data in form of *Objects*.
+The *Astral Network* consists of different kinds of actors represented by [*Identities*](../core-primitives/identity.md), which communicate by sending each other [*Queries*](../core-primitives/query.md) and exchange data in form of [*Objects*](../core-primitives/object.md).
 
-An *Identity* might represent a *User* or software (*Nodes*, *Apps*, *Agents*).
+An *Identity* might represent a [*User*](../core-primitives/user.md) or software ([*Nodes*](../core-primitives/node.md), [*Apps*](../core-primitives/app.md), *Agents*).
 
 A *User* interacts with the network by signing *Contracts* with their secp256k1 keys. A *Contract* is a permission given by an *Identity* (the *Issuer*) to an *Identity* (the *Subject*) to represent the *Issuer* on the network in some capacity. The *User* signs a *Contract* with a *Node* to represent them on the network. *Apps* sign a *Contract* with their host *Node* to allow the *Node* to route traffic for them.
 
-*Nodes* talk to each other over *Links*. A *Link* is a connection using the Astral Query Multiplexer protocol. *Links* can be established using the Noise XK protocol (which provides athentication and encryption) over any bidirectional bytestream. Default *Node* implementation supports several transports such as TCP, Tor, KCP (for post-NAT traversal UDP connections). *Links* are used to route *Queries* between the two *Nodes* as well as all traffic any *Contract* permits the *Nodes* to route.
+*Nodes* talk to each other over [*Links*](../core-primitives/link.md). A *Link* is a connection using the Astral Query Multiplexer protocol. *Links* can be established using the Noise XK protocol (which provides athentication and encryption) over any bidirectional bytestream. Default *Node* implementation supports several transports such as TCP, Tor, KCP (for post-NAT traversal UDP connections). *Links* are used to route *Queries* between the two *Nodes* as well as all traffic any *Contract* permits the *Nodes* to route.
 
 *Nodes* for the backbone of the peer-to-peer Astral Network. They actively maintain and optimize links in order to route *Queries* as efficiently as possible.
 
 The *Astral Network* is **not** a global broadcast network. By default, a *Node* does not attempt to link to any other *Node*. A *Node* will only try to link to other *Nodes*:
 
-- after joining a *Swarm* it will try to stay linked to other members of the *Swarm*
+- after joining a [*Swarm*](../core-primitives/swarm.md) it will try to stay linked to other members of the *Swarm*
 - when routing a query to or via another *Node*
 - for other app-specific, explicitly defined reason
 
@@ -26,4 +26,4 @@ A *Swarm* is a group of *Nodes* and has rules that define who is allowed to join
 
 *Apps* and *Agents* connect to the local *Node* (subjective *localnode*) via some form of RPC (unix, TCP, WebSocket) and use the *Node's* API to interact with the *Astral Network* or use services provided by the *Node*, such as storage, search, user sync, key management, data indexing, etc.
 
-A *Query* is a singular call to an *Op* from the **Caller* to the **Target* and can be rejected or accepted. An acepted *Query* results in a channel over which sides exchange data as *Objects* (or, in some cases, raw bytes).
+A *Query* is a singular call to an [*Op*](../core-primitives/op.md) from the **Caller* to the **Target* and can be rejected or accepted. An acepted *Query* results in a channel over which sides exchange data as *Objects* (or, in some cases, raw bytes).

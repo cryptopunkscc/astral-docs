@@ -5,7 +5,7 @@
 * The `Binary Encoding` uses the Big Endian byte order. Signed integers
   use two's complement.
 * The `Binary Encoding` defines the `Payload` bytes only. Framing of a
-  typed object — the bytes that announce the `Object Type` in front of
+  typed object — the bytes that announce the [`Object Type`](../core-primitives/object-type.md) in front of
   the `Payload` — is covered in [Codec](codec.md).
 
 ## Primitives

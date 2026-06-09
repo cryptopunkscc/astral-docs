@@ -93,7 +93,7 @@ host  → guest: astral.ack                       (or error_msg{denied})
 ```
 
 The registration connection stays open. For each inbound query targeting
-`Identity`, the host pushes:
+[`Identity`](../core-primitives/identity.md), the host pushes:
 
 ```
 host → guest: mod.apphost.incoming_query_msg {
