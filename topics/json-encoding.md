@@ -6,5 +6,16 @@
 * The `JSON Encoding` uses a container with "Type" and "Object" keys. The
   "Type" key contains the `Object Type` and the "Object" key contains the
   `Payload` encoded as a JSON object.
-* The exact way the `Payload` is encoded is described in the documentation 
+* The exact way the `Payload` is encoded is described in the documentation
   of the specific `Object Type`.
+* Absent optional values are encoded as JSON `null`.
+* Field-name lookup during decoding is case-insensitive.
+
+
+## Example
+
+```
+   {"Type":"uint32","Object":42}
+```
+
+

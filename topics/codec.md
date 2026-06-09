@@ -1,0 +1,32 @@
+# Codec
+
+* The `Codec` writes and reads `Objects` as a type tag followed by the
+  `Payload`. The tag is produced by a `Type Encoder` chosen by the caller;
+  the `Payload` follows the [Binary Encoding](binary-encoding.md) rules.
+* The decoder resolves the `Object Type` to a zero `Object` through a
+  [Blueprints](blueprints.md) registry and calls `ReadFrom` on it.
+* The `Codec` described here is the binary framing layer. `JSON` and
+  `Text` encodings define their own framing — see
+  [JSON Encoding](json-encoding.md) and [Text Encoding](text-encoding.md).
+
+## Type Encoders
+
+| Encoder     | Tag bytes                                                          | Notes                                                                                   |
+|-------------|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| `Short`     | `Object Type` ([`string8`](../common-types/string8.md))            | Used by framed channels and nested polymorphic fields.                                  |
+| `Canonical` | `Stamp \|\| Object Type (string8)`                                 | Used for `Object ID` hashing and out-of-band transport. Rejects an empty `Object Type`. |
+| `Indexed`   | [`uint8`](../common-types/uint8.md) index                          | Used by protocols with a closed type table known to both parties.                       |
+
+## Canonical Form
+
+* The `Canonical Form` of a `Typed Object` is the byte sequence used to
+  compute its [`Object ID`](../core-primitives/object-id.md) and to
+  express it outside any framing.
+* It is the `Canonical Type Encoder`'s output: `Stamp` followed by the
+  `Object Type` as a `string8` followed by the `Payload`.
+
+```
+   41 44 43 30                Stamp (0x41444330)
+   06 75 69 6e 74 33 32       Object Type "uint32" (string8)
+   00 00 00 2a                Payload (uint32 = 42)
+```
