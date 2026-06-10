@@ -76,8 +76,5 @@ These documents define abstract wire and protocol semantics — types, encodings
     * [HTTP Transport](topics/http-transport.md) - request-response queries via the local node over HTTP
     * [WebSocket Transport](topics/ws-transport.md) - sending and receiving queries over the apphost WebSocket endpoint
     * [Astral IPC](topics/astral-ipc.md) - wire protocol for local processes routing queries through the node (mod/apphost)
-  * Procedures
-    * [Node Setup](topics/node-setup.md) - bringing a fresh node under a user identity with its first contract
-    * [Node Claiming](topics/node-claiming.md) - installing a contract on an unclaimed node to join it to a user's swarm
 * Scripts – repo maintenance
     * [link-vocab.py](scripts/link-vocab.py) – link vocabulary terms at their first prose occurrence across docs
