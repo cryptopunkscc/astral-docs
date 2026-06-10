@@ -1,6 +1,6 @@
 # HTTP Transport
 
-HTTP transport provides a way to send [*Queries*](../core-definitions/query.md) via the local [*Node*](../core-definitions/node.md) over the *Astral Network*. Due to how HTTP works, *Queries* sent over HTTP are limited to a simple request-response flow. [*Ops*](../core-definitions/op.md) that require a more interactive dialog should be router through the native [*Astral IPC*](astral-ipc.md) protocol or [WebSocket Transport](ws-transport.md).
+HTTP transport provides a way to send [*Queries*](../core-definitions/query.md) via the local [*Node*](../core-definitions/node.md) over the *Astral Network*. Due to how HTTP works, *Queries* sent over HTTP are limited to a simple request-response flow. [*Ops*](../core-definitions/op.md) that require a more interactive dialog should be routed through the native [*Astral IPC*](astral-ipc.md) protocol or [WebSocket Transport](ws-transport.md).
 
 * The default HTTP endpoint for all calls is `http://localhost:8624/`.
 * HTTP requests are authenticated using an *Auth Token* provided as a bearer 

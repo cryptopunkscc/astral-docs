@@ -2,6 +2,8 @@
 
 This documentation describes the Astral Network and how to interact with it.
 
+These documents define abstract wire and protocol semantics — types, encodings, and operations are language-independent and carry no binding to any programming language.
+
 * [Core primitives](core-definitions/README.md)
   * [Alias](core-definitions/alias.md)
   * [App](core-definitions/app.md)
@@ -61,15 +63,21 @@ This documentation describes the Astral Network and how to interact with it.
 * [Tools](tools/README.md) – command-line tools
   * [astral-query](tools/astral-query.md) - send queries from the command line
 * Other topics
-  * [Node Setup](topics/node-setup.md)
-  * [Node Claiming](topics/node-claiming.md)
-  * [Astral IPC](topics/astral-ipc.md)
-  * [HTTP Transport](topics/http-transport.md)
-  * [WebSocket Transport](topics/ws-transport.md)
-  * [Binary Encoding](topics/binary-encoding.md)
-  * [JSON Encoding](topics/json-encoding.md)
-  * [Text Encoding](topics/text-encoding.md)
-  * [Batch mode](topics/batch-mode.md)
-  * [Network Architecture](topics/network-architecture.md)
+  * Narratives
+    * [Network Architecture](topics/network-architecture.md) - how identities, nodes, links, swarms, and contracts compose at runtime
+    * [Blueprints](topics/blueprints.md) - runtime wire-structure schemas that let a node encode and decode typed objects without compiled code
+    * [Codec](topics/codec.md) - binary framing layer: type encoders, type tags, and the canonical form of typed objects
+  * Wire mechanics
+    * [Binary Encoding](topics/binary-encoding.md) - default payload encoding: big-endian, two's complement, payload bytes only
+    * [JSON Encoding](topics/json-encoding.md) - optional JSON container encoding for typed objects
+    * [Text Encoding](topics/text-encoding.md) - Base64-based text encoding of objects
+    * [Batch mode](topics/batch-mode.md) - running an op once per input object read from the channel
+  * Transports
+    * [HTTP Transport](topics/http-transport.md) - request-response queries via the local node over HTTP
+    * [WebSocket Transport](topics/ws-transport.md) - sending and receiving queries over the apphost WebSocket endpoint
+    * [Astral IPC](topics/astral-ipc.md) - wire protocol for local processes routing queries through the node (mod/apphost)
+  * Procedures
+    * [Node Setup](topics/node-setup.md) - bringing a fresh node under a user identity with its first contract
+    * [Node Claiming](topics/node-claiming.md) - installing a contract on an unclaimed node to join it to a user's swarm
 * Scripts – repo maintenance
     * [link-vocab.py](scripts/link-vocab.py) – link vocabulary terms at their first prose occurrence across docs
