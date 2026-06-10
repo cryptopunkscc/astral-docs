@@ -6,6 +6,7 @@ The `player` protocol controls a music player: playback state (play, pause, seek
 
 * **Observability** – `player.state` and `player.queue` accept a `follow` argument. With `follow`, the operation stays open and streams a new snapshot whenever the state or queue changes, so any number of front-ends can stay in sync while controlling the player concurrently.
 * **Position extrapolation** – the player does not stream continuous position updates. A `player.state` object carries the playback position at the time given by `UpdatedAt`; while the status is "playing", observers compute the current position as `Position + (now - UpdatedAt)`. A new state is emitted on every transition (play, pause, seek, track change).
+* **Track metadata** – the state snapshot includes the current track's title, artist, album and the object ID of its cover image. The player does the media-format heavy lifting: it reads the file's tags, extracts embedded artwork and stores it as an object on the local node, so front-ends only ever deal with typed objects and object IDs.
 * **Queue versioning** – the queue has a `Version` that increases on every modification. Index-based operations (`player.remove`, `player.move`) accept an optional `version` argument and are rejected if the queue has changed since, protecting concurrent editors from acting on stale indexes.
 
 ## Operations

@@ -1,6 +1,6 @@
 # player.state
 
-Get the current playback state.
+Get the current playback state, including the current track's metadata (title, artist, album, cover image).
 
 ## Arguments
 
@@ -16,12 +16,12 @@ The operation returns one of:
 
 ```shellsession
 $ astral-query player.state -out json
-{"Type":"player.state","Object":{"Status":"playing","Index":2,"Track":"data1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Position":73500,"Duration":214000,"UpdatedAt":"2026-06-09T12:00:00Z","Version":17}}
+{"Type":"player.state","Object":{"Status":"playing","Index":2,"Track":"data1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Title":"Paranoid Android","Artist":"Radiohead","Album":"OK Computer","Cover":"data1cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc","Position":73500,"Duration":214000,"UpdatedAt":"2026-06-09T12:00:00Z","Version":17}}
 {"Type":"eos","Object":null}
 ```
 
 ```shellsession
 $ astral-query player.state -follow true -out json
-{"Type":"player.state","Object":{"Status":"playing","Index":2,"Track":"data1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Position":73500,"Duration":214000,"UpdatedAt":"2026-06-09T12:00:00Z","Version":17}}
-{"Type":"player.state","Object":{"Status":"paused","Index":2,"Track":"data1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Position":80100,"Duration":214000,"UpdatedAt":"2026-06-09T12:00:06Z","Version":17}}
+{"Type":"player.state","Object":{"Status":"playing","Index":2,"Track":"data1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Title":"Paranoid Android","Artist":"Radiohead","Album":"OK Computer","Cover":"data1cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc","Position":73500,"Duration":214000,"UpdatedAt":"2026-06-09T12:00:00Z","Version":17}}
+{"Type":"player.state","Object":{"Status":"paused","Index":2,"Track":"data1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Title":"Paranoid Android","Artist":"Radiohead","Album":"OK Computer","Cover":"data1cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc","Position":80100,"Duration":214000,"UpdatedAt":"2026-06-09T12:00:06Z","Version":17}}
 ```
