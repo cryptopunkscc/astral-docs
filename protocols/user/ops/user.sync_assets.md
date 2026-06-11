@@ -11,7 +11,7 @@ Rejected with code `2` if the database read failed.
 
 ## Arguments
 
-* start (int, optional) – Lowest log height to include (inclusive). Defaults
+* start (uint64, optional) – Lowest log height to include (inclusive). Defaults
   to `0` (full log).
 
 ## Returned objects

@@ -6,7 +6,7 @@ Emitted when a new link to a remote identity becomes active.
 
 * RemoteIdentity (identity) – Identity of the other party on the new link.
 * LinkID (nonce64) – Local id of the new link.
-* LinkCount (int) – Total number of links to the same remote identity after this addition.
+* LinkCount (uint32) – Total number of links to the same remote identity after this addition.
 
 ## Example
 

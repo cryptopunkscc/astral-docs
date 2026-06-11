@@ -4,7 +4,7 @@ Run a search query across registered searchers. The query string follows the `ob
 
 ## Arguments
 
-* q (string16, required) – The search query.
+* q (string, required) – The search query.
 * repo (string8) – If set, only matches whose objects exist in this repository are returned.
 * zone (zone) – Zone filter for the search context. Defaults to all zones.
 * out (string8) – Output format.

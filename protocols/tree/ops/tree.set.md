@@ -5,7 +5,9 @@ Set the value at a path. The value is passed as a typed object via the input str
 ## Arguments
 
 * path (string8, required) – The path to write.
-* (stream) – A typed object to store at the path.
+* Type (string) – The object type name to use when parsing `Value`; inferred from the node's current value if empty.
+* Value (string) – The text-encoded value to store. Defaults to empty; when empty the op enters streaming mode and reads typed objects from the input stream.
+* (stream) – A typed object to store at the path; consumed only when `Value` is empty.
 
 ## Returned objects
 
@@ -22,5 +24,10 @@ $ echo '{"Type":"bool","Object":false}' | astral-query tree.set -path /mod/tcp/s
 
 ```shellsession
 $ echo '{"Type":"string8","Object":"hello"}' | astral-query tree.set -path /tmp/mykey -in json -out json
+{"Type":"ack","Object":null}
+```
+
+```shellsession
+$ astral-query tree.set -path /tmp/mykey -Type string8 -Value hello -out json
 {"Type":"ack","Object":null}
 ```

@@ -5,6 +5,7 @@ Delete the value at a path.
 ## Arguments
 
 * path (string8, required) – The path to delete.
+* Recursive (bool) – Delete the node and all of its subnodes depth-first. Defaults to false.
 
 ## Returned objects
 
@@ -16,5 +17,10 @@ The operation returns one of:
 
 ```shellsession
 $ astral-query tree.delete -path /tmp/mykey -out json
+{"Type":"ack","Object":null}
+```
+
+```shellsession
+$ astral-query tree.delete -path /tmp/mydir -Recursive -out json
 {"Type":"ack","Object":null}
 ```

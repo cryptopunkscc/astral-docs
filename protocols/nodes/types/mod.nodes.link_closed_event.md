@@ -6,7 +6,7 @@ Emitted when a link to a remote identity is closed.
 
 * RemoteIdentity (identity) – Identity of the other party on the closed link.
 * Forced (bool) – True if the link was closed forcibly (e.g. via `nodes.close_link` or an error) rather than gracefully.
-* LinkCount (int8) – Number of remaining links to the same remote identity after this close.
+* LinkCount (uint8) – Number of remaining links to the same remote identity after this close.
 
 ## Example
 

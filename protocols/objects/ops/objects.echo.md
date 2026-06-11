@@ -7,9 +7,10 @@ Echo received objects back to the caller, optionally filtered by type. Useful fo
 * only (string8) – Comma-separated list of object types to echo. Other types are dropped.
 * except (string8) – Comma-separated list of object types to drop. Other types are echoed.
 * stop (string8) – Closes the channel when an object of this type is received (acts as an explicit terminator).
+* strict (bool) – If true, an object whose blueprint is not registered causes an `error_message` and closes the stream; if false, unrecognized objects are silently skipped. Defaults to false.
 * in (string8) – Input format.
 * out (string8) – Output format.
-* (stream) – Any objects to be echoed back. Unknown object types are silently skipped.
+* (stream) – Any objects to be echoed back. Unknown object types are silently skipped unless `strict` is set.
 
 ## Returned objects
 

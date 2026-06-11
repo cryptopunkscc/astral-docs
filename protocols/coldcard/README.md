@@ -1,0 +1,5 @@
+# coldcard
+
+The `coldcard` protocol integrates Coldcard hardware wallet devices with the node. It detects connected devices via USB, maps each device's serial number to its derived public key, and exposes the resulting crypto engine for signing.
+
+The `coldcard.scan` operation re-scans the USB bus and refreshes the module's device state.
