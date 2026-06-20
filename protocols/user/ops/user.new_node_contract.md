@@ -1,7 +1,7 @@
 # user.new_node_contract
 
 Build an unsigned `mod.auth.contract` that grants
-`mod.user.swarm_access_action` from a user identity to a node identity for a
+`mod.user.swarm_membership_action` from a user identity to a node identity for a
 given duration. Used by tooling that wants to assemble a contract before
 asking the issuer and subject to sign it.
 
