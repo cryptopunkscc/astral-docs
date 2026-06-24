@@ -12,6 +12,8 @@
 * An `Operation` that accepts a `Zone` treats it as a filter; the default is all
   `Zones`.
 * The `Network` `Zone` is stripped from untrusted queries (e.g. anonymous guests),
-  confining them to the local `Node`.
+  confining them to the local `Node`: a `Query` that lacks it cannot reach another
+  `Node` and fails with `route_not_found` before any [`Link`](link.md) is tried.
+  Authenticating (presenting an access token) retains it.
 * A `Zone` is written in text as a string of `d`, `v`, `n` (e.g. `dvn`), and on the
   wire as a [`uint8`](../primitive-types/uint8.md) bit field.

@@ -4,6 +4,8 @@
 * A `Query` has `Caller` and `Target` identities, and a [`Query String`](query-string.md).
 * A `Query` can be routed by various means: directly via [`Links`](link.md), relayed via
   [`Nodes`](node.md), as well as other means.
+* A `Query` carries a [`Zone`](zone.md) that scopes how far it may be routed;
+  reaching another `Node` requires the `Network` zone.
 * The `Target` can reject the `Query` with a non-zero uint8 `Reject Code`.
 * The generic and default `Reject Code` is 1. Other values are `Operation`
   specific.
