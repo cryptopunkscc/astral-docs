@@ -27,3 +27,5 @@ A *Swarm* is a group of *Nodes* and has rules that define who is allowed to join
 *Apps* and *Agents* connect to the local *Node* (subjective *localnode*) via some form of RPC (unix, TCP, WebSocket) and use the *Node's* API to interact with the *Astral Network* or use services provided by the *Node*, such as storage, search, user sync, key management, data indexing, etc.
 
 A *Query* is a singular call to an [*Op*](../core-definitions/op.md) from the *Caller* to the *Target* and can be rejected or accepted. An accepted *Query* results in a channel over which sides exchange data as *Objects* (or, in some cases, raw bytes).
+
+Every *Query* carries a [*Zone*](../core-definitions/zone.md) — `device`, `virtual`, `network`, or a combination — that limits how far it travels. A *Query* without the `network` zone is served only by the local *Node*, so a local app must authenticate (present an access token) to reach other *Nodes*.

@@ -36,7 +36,7 @@ After step 1 the guest is *anonymous*; after a successful step 2 the session
 is bound to `GuestID`. Anonymous guests:
 
 - may send queries only if the host's `AllowAnonymous` config is on (default);
-- have the network zone (`ZoneNetwork`) stripped from their queries;
+- have the network [`Zone`](../core-definitions/zone.md) (`ZoneNetwork`) stripped from their queries, so they cannot reach other nodes;
 - may not register handlers.
 
 The guest may then send exactly one of `RouteQueryMsg`, `RegisterServiceMsg`,
