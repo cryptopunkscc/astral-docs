@@ -21,7 +21,7 @@ supports one or both of:
   `Channel` byte stream. Both sides must agree on an encoding — see
   [Binary](binary-encoding.md), [JSON](json-encoding.md), [Text](text-encoding.md).
 * Composition carries no atomicity guarantee, and an `Op` reports failure in-band
-  as an `error_message` `Object` rather than out of band: a failed stage emits an
+  as an [`error_message`](../primitive-types/error_message.md) `Object` rather than out of band: a failed stage emits an
   `Object` of the wrong type into the stream instead of halting the pipeline. Do
   not compose `Ops` whose effects must apply together.
 * batch mode is fan-out within a single `Op` (one stream of inputs, one result
