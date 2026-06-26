@@ -19,3 +19,26 @@ fails locally with `route_not_found` before reaching the target — exporting th
 token, not changing the query, is the fix. A token issued to a
 [`User`](../core-definitions/user.md) also routes the query as that user, which
 the target may require in order to accept it.
+
+## Encodings and chaining
+
+Each query runs an [`Op`](../core-definitions/op.md) over a
+[`Channel`](../core-definitions/channel.md); `astral-query` maps that `Channel`
+onto the process's standard streams:
+
+* `-in <enc>` decodes input [`Objects`](../core-definitions/object.md) from stdin.
+* `-out <enc>` encodes result `Objects` to stdout.
+
+`<enc>` is one of `bin`, `json`, or `text`. Because the streams carry typed
+`Objects`, single-mode ops chain with shell pipes when the upstream result's
+`Object Type` is the type the next op reads and both sides use the same encoding:
+
+```shellsession
+$ astral-query bip137sig.new_entropy -bits 256 -out json \
+  | astral-query bip137sig.mnemonic   -in json -out json \
+  | astral-query bip137sig.seed       -in json -out json \
+  | astral-query bip137sig.derive_key -in json -out json -path "m/44'/0'/0'/0/0"
+```
+
+See [Op modes & composition](../topics/op-modes.md) for the composition rule and
+its limits.
