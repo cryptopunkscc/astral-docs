@@ -75,7 +75,7 @@ These documents define abstract wire and protocol semantics — types, encodings
     * [Binary Encoding](topics/binary-encoding.md) - default payload encoding: big-endian, two's complement, payload bytes only
     * [JSON Encoding](topics/json-encoding.md) - optional JSON container encoding for typed objects
     * [Text Encoding](topics/text-encoding.md) - Base64-based text encoding of objects
-    * [Batch mode](topics/batch-mode.md) - running an op once per input object read from the channel
+    * [Op modes & composition](topics/op-modes.md) - single vs batch execution, and chaining single-mode ops into pipelines
   * Transports
     * [HTTP Transport](topics/http-transport.md) - request-response queries via the local node over HTTP
     * [WebSocket Transport](topics/ws-transport.md) - sending and receiving queries over the apphost WebSocket endpoint
