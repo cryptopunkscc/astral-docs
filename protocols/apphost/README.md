@@ -11,3 +11,13 @@ stripped from its queries, so it cannot reach other nodes (a query to another
 node fails with `route_not_found`). Authenticating retains the `Network` zone
 and binds the session, and the queries it makes, to the token's
 [`Identity`](../../core-definitions/identity.md).
+
+A guest arriving over the WebSocket endpoint carries its browser origin. An
+unauthenticated web guest is further confined to a configured operation
+allowlist selected by whether a user has claimed the node: an *unclaimed* node
+(no active contract) exposes the setup-ceremony operations; a *claimed* node
+exposes only the operations that let a fresh guest obtain an identity. IPC
+guests and token-authenticated guests are not restricted by the allowlist. Each
+query from a token-less session is tagged as anonymous so an operation can
+distinguish an anonymous caller from the node's own identity, which a missing
+caller otherwise resolves to.

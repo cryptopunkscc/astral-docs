@@ -12,7 +12,12 @@ user assets (`user.assets`, `user.add_asset`, `user.remove_asset`,
 
 Swarm membership is managed through contract ops: a user adopts a node with
 `user.adopt` or lets it request membership with `user.request_membership`; a
-node accepts an inbound contract with `user.accept_membership`. A user
-permanently bans a node with `user.expel`, and the list of bans is inspectable
-via `user.list_expelled`. Banned nodes hold a `mod.user.signed_expulsion` and
-are refused new contracts.
+node accepts an inbound contract with `user.accept_membership`, or activates an
+already-signed contract with `user.accept_contract` (node setup and the
+cold-card path). A user permanently bans a node with `user.expel`, and the list
+of bans is inspectable via `user.list_expelled`. Banned nodes hold a
+`mod.user.signed_expulsion` and are refused new contracts.
+
+The active contract is validated on every application — both signatures, subject
+identity match, remaining validity, and a swarm-membership permit — so a stored
+value that fails validation never takes effect.
