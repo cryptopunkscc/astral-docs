@@ -4,6 +4,14 @@ This documentation describes the Astral Network and how to interact with it.
 
 These documents define abstract wire and protocol semantics — types, encodings, and operations are language-independent and carry no binding to any programming language.
 
+Language SDKs implement this specification:
+
+* [astral-go](https://github.com/astralp2p/astral-go) - the Go SDK; [astrald](https://github.com/astralp2p/astrald), the node daemon, builds on it
+* [astral-py](https://github.com/astralp2p/astral-py) - the Python SDK
+* [astral-js](https://github.com/astralp2p/astral-js) - the browser JavaScript SDK, with TypeScript typings
+
+Contents:
+
 * [Core primitives](core-definitions/README.md)
   * [Alias](core-definitions/alias.md)
   * [App](core-definitions/app.md)
