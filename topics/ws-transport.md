@@ -80,6 +80,11 @@ Notes:
 - `caller` defaults to the connection's `guestID`; passing `null`
   explicitly suppresses it (the host then fills in its own node identity,
   which is rarely what you want).
+- an unauthenticated web guest may call only the operations on the node's
+  claim-state allowlist — the setup-ceremony operations while the node is
+  unclaimed, otherwise a minimal identity-acquisition set. Operations outside
+  it are rejected. Authenticating lifts the restriction. See the apphost
+  protocol.
 - JSON mode auto-injects `out=json&in=json` server-side so responder
   frames are JSON-encoded `astral.JSONAdapter` objects. Override by
   putting `in=`/`out=` in `queryString` yourself.

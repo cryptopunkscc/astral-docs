@@ -39,6 +39,12 @@ is bound to `GuestID`. Anonymous guests:
 - have the network [`Zone`](../core-definitions/zone.md) (`ZoneNetwork`) stripped from their queries, so they cannot reach other nodes;
 - may not register handlers.
 
+A query with a zero `Caller` is routed as the node's own identity. The host
+tags every query from a token-less session as anonymous so an operation can
+tell an anonymous caller apart from the node itself once the caller is resolved.
+IPC guests carry no web origin and are not subject to the web-guest operation
+allowlist that applies to browser guests (see the apphost protocol).
+
 The guest may then send exactly one of `RouteQueryMsg`, `RegisterServiceMsg`,
 or `AttachQueryMsg` (the last only on a fresh sub-connection answering an
 `IncomingQueryMsg`). Any other top-level message yields
