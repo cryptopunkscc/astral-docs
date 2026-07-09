@@ -17,3 +17,10 @@ HTTP transport provides a way to send [*Queries*](../core-definitions/query.md) 
   *Identity* authenticated via the *Auth Token*.
 * HTTP response headers will contain "X-Astral-Host-Identity" with the 
   *Identity* of the host *Node*.
+* `GET /.objects/<object-id>` returns the raw bytes of the object. It is 
+  authenticated with the bearer token and, additionally, subject to a per-object 
+  read authorization; a failed authorization returns 403.
+* `/.ws` is reserved for the WebSocket upgrade (see 
+  [WebSocket Transport](ws-transport.md)).
+* The permissive CORS headers apply to the query and object endpoints, not to 
+  `/.ws`.

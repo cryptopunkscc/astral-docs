@@ -32,8 +32,15 @@ These documents define abstract wire and protocol semantics — types, encodings
 * [Common types](primitive-types/README.md) – common object types
   * [ack](primitive-types/ack.md)
   * [bool](primitive-types/bool.md)
+  * [bytes8](primitive-types/bytes8.md)
+  * [bytes16](primitive-types/bytes16.md)
+  * [bytes32](primitive-types/bytes32.md)
+  * [bytes64](primitive-types/bytes64.md)
+  * [duration](primitive-types/duration.md)
   * [eos](primitive-types/eos.md)
   * [error_message](primitive-types/error_message.md)
+  * [float32](primitive-types/float32.md)
+  * [float64](primitive-types/float64.md)
   * [identity](primitive-types/identity.md)
   * [int8](primitive-types/int8.md)
   * [int16](primitive-types/int16.md)
@@ -58,12 +65,16 @@ These documents define abstract wire and protocol semantics — types, encodings
   * [bip137sig](protocols/bip137sig/README.md) - BIP-39/32/137 seed, key derivation, and message signing
   * [crypto](protocols/crypto/README.md) - signing and verifying hashes and text, public key derivation
   * [dir](protocols/dir/README.md) - alias management, identity resolution
+  * [ether](protocols/ether/README.md) - LAN UDP broadcast for node presence and discovery
   * [lna](protocols/lna/README.md) - lightning network analytics
+  * [nat](protocols/nat/README.md) - NAT traversal via UDP hole punching
   * [nodes](protocols/nodes/README.md) - encrypted links and multiplexed sessions between nodes
   * [objects](protocols/objects/README.md) - typed object storage, retrieval, and provider discovery
   * [player](protocols/player/README.md) - music playback and play queue control
+  * [tor](protocols/tor/README.md) - onion-service transport over Tor
   * [tree](protocols/tree/README.md) - hierarchical key-value configuration store
   * [user](protocols/user/README.md) - user identity, swarm membership, asset list
+  * [utp](protocols/utp/README.md) - uTP-over-UDP transport
 * [Tools](tools/README.md) – command-line tools
   * [astral-query](tools/astral-query.md) - send queries from the command line
 * Other topics
@@ -80,5 +91,6 @@ These documents define abstract wire and protocol semantics — types, encodings
     * [HTTP Transport](topics/http-transport.md) - request-response queries via the local node over HTTP
     * [WebSocket Transport](topics/ws-transport.md) - sending and receiving queries over the apphost WebSocket endpoint
     * [Astral IPC](topics/astral-ipc.md) - wire protocol for local processes routing queries through the node (mod/apphost)
+    * [Link Multiplexer](topics/link-mux.md) - node-to-node link frames, sessions, and credit-based flow control
 * Scripts – repo maintenance
     * [link-vocab.py](scripts/link-vocab.py) – link vocabulary terms at their first prose occurrence across docs

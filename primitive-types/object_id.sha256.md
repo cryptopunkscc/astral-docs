@@ -2,8 +2,10 @@
 
 An object ID consisting of a `Size` (uint64) and a `Hash` (SHA-256, 32 bytes).
 
-* The `Size` is the length of the payload in bytes.
-* The `Hash` is the SHA-256 hash of the payload.
+* For a `Typed Object` the `Size` and `Hash` cover the object's `Canonical Form` — the `Stamp`, then the object type as a `string8`, then the payload (see [Codec](../topics/codec.md)).
+* For an `Untyped Object` the `Size` and `Hash` cover the raw payload.
+* The `Size` is the length in bytes of that byte sequence.
+* The `Hash` is the SHA-256 hash of that byte sequence.
 
 ## Binary Encoding
 

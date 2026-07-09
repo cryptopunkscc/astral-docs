@@ -4,6 +4,19 @@ How `lib/apphost-js` sends and receives queries against the local astrald node
 over the apphost WebSocket endpoint. Covers the WS transport only — query
 semantics, identities and the broader apphost protocol live elsewhere.
 
+The client described below uses the `astral.json.v1` subprotocol.
+
+## Server surface
+
+The `/.ws` upgrade negotiates one of two subprotocols via the
+`Sec-WebSocket-Protocol` header:
+
+- `astral.binary.v1` — binary WebSocket frames carrying the standard
+  [binary-channel](../core-definitions/channel.md) bytestream.
+- `astral.json.v1` — one JSON envelope per text frame.
+
+The connection is closed if neither subprotocol is offered.
+
 ## Endpoint and framing
 
 - URL: the apphost HTTP listener exposes a WebSocket upgrade at `/.ws`

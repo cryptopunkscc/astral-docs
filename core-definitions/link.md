@@ -10,3 +10,6 @@
 * A `Link` uses the Noise XK protocol for authentication and encryption by
   default, but any protocol can be used as long as both parties agree on it
   (which can happen out-of-band).
+* The Noise XK static keys are the peers' [`Identity`](identity.md) secp256k1 key
+  pairs; there is no separate handshake key. The initiator therefore commits to
+  the responder's `Identity` before the handshake begins.
