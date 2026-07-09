@@ -16,3 +16,13 @@ untyped blob.
 ```
 String8(ObjectType) ++ Bytes32(Payload)`
 ```
+
+## JSON Encoding
+
+A JSON channel carries one JSON envelope per newline-terminated line. See the
+[`JSON Encoding`](../topics/json-encoding.md).
+
+## Text Encoding
+
+A text channel carries one text-encoded object per newline-terminated line. See
+the [`Text Encoding`](../topics/text-encoding.md).
