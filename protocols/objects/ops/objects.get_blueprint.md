@@ -15,11 +15,11 @@ type is primitive (primitives have no blueprint) or is unknown.
 
 The operation returns one of:
 * An `error_message` object if the named type is primitive (has no blueprint) or is unknown.
-* The blueprint object for the named type.
+* The [`astral.blueprint`](../../../topics/blueprints.md) object for the named type. Its `Object` carries `Type` (the type name), `Fields` (the ordered field specs; empty for an alias), and `Underlying` (the aliased primitive name; empty for a struct).
 
 ## Examples
 
 ```shellsession
 $ astral-query objects.get_blueprint -type mod.gateway.endpoint -out json
-{"Type":"astral.Blueprint","Object":{"Kind":"struct","Name":"mod.gateway.endpoint","Fields":[{"Name":"GatewayID","Spec":{"Primitive":"identity"}},{"Name":"TargetID","Spec":{"Primitive":"identity"}}]}}
+{"Type":"astral.blueprint","Object":{"Fields":[{"Name":"GatewayID","Spec":{"Type":"astral.blueprint.primitive_spec","Object":{"PrimitiveType":"identity"}}},{"Name":"TargetID","Spec":{"Type":"astral.blueprint.primitive_spec","Object":{"PrimitiveType":"identity"}}}],"Type":"mod.gateway.endpoint","Underlying":""}}
 ```
