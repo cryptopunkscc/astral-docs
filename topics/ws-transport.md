@@ -1,6 +1,6 @@
-# WebSocket transport (apphost-js)
+# WebSocket transport (astral-js)
 
-How `lib/apphost-js` sends and receives queries against the local astrald node
+How `astral-js` sends and receives queries against the local astrald node
 over the apphost WebSocket endpoint. Covers the WS transport only — query
 semantics, identities and the broader apphost protocol live elsewhere.
 
